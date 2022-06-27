@@ -9,7 +9,6 @@
 
 void execArgsPiped(char** parsed, char** parsedpipe)
 {
-    // 0 is read end, 1 is write end
     int pipefd[2]; 
     pid_t p1, p2;
   
@@ -24,8 +23,6 @@ void execArgsPiped(char** parsed, char** parsedpipe)
     }
   
     if (p1 == 0) {
-        // Child 1 executing..
-        // It only needs to write at the write end
         close(pipefd[0]);
         dup2(pipefd[1], STDOUT_FILENO);
         close(pipefd[1]);
@@ -35,7 +32,6 @@ void execArgsPiped(char** parsed, char** parsedpipe)
             exit(0);
         }
     } else {
-        // Parent executing
         p2 = fork();
   
         if (p2 < 0) {
@@ -43,8 +39,6 @@ void execArgsPiped(char** parsed, char** parsedpipe)
             return;
         }
   
-        // Child 2 executing..
-        // It only needs to read at the read end
         if (p2 == 0) {
             close(pipefd[1]);
             dup2(pipefd[0], STDIN_FILENO);
@@ -54,7 +48,6 @@ void execArgsPiped(char** parsed, char** parsedpipe)
                 exit(0);
             }
         } else {
-            // parent executing, waiting for two children
             wait(NULL);
             wait(NULL);
         }

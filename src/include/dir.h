@@ -1,3 +1,4 @@
+// C Program to design a shell in Linux
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -7,15 +8,9 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-// Include
-
-void openHelp()
+void printDir()
 {
-    puts("\n***WELCOME TO LCS HELP***"
-        "\nList of Commands supported:"
-        "\n>cd"
-        "\n>ls"
-        "\n>exit");
-  
-    return;
+    char cwd[1024];
+    getcwd(cwd, sizeof(cwd));
+    printf("\nDir: %s", cwd);
 }
