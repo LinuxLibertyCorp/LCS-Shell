@@ -13,32 +13,30 @@
 #include "include/help.h"
 #include "include/commands.h"
 #include "include/error.h"
+#include "include/dir.h"
+#include "include/execargs.h"
 
   
 #define MAXCOM 1000
 #define MAXLIST 100
   
-// Clearing the shell using escape sequences
 #define clear() printf("\033[H\033[J")
   
-// Greeting shell during startup
 void init_shell()
 {
     clear();
     printf("\n\n\n\n******************"
         "************************");
-    printf("\n\n\n\t****MY SHELL****");
-    printf("\n\n\t-USE AT YOUR OWN RISK-");
+    printf("\n\n\n\t****LCS SHELL****");
     printf("\n\n\n\n*******************"
         "***********************");
     char* username = getenv("USER");
-    printf("\n\n\nUSER is: @%s", username);
+    printf("\n\n\nUSER: @%s", username);
     printf("\n");
-    sleep(1);
+    sleep(2);
     clear();
 }
   
-// Function to take input
 int takeInput(char* str)
 {
     char* buf;
@@ -53,52 +51,28 @@ int takeInput(char* str)
     }
 }
   
-// Function to print Current Directory.
-void printDir()
-{
-    char cwd[1024];
-    getcwd(cwd, sizeof(cwd));
-    printf("\nDir: %s", cwd);
+void dir(){
+    printDir();
 }
   
-// Function where the system command is executed
-void execArgs(char** parsed)
+void args(char** parsed)
 {
-    // Forking a child
-    pid_t pid = fork(); 
-  
-    if (pid == -1) {
-        printf("\nFailed forking child..");
-        return;
-    } else if (pid == 0) {
-        if (execvp(parsed[0], parsed) < 0) {
-            printf("\nCould not execute command..");
-        }
-        exit(0);
-    } else {
-        // waiting for child to terminate
-        wait(NULL); 
-        return;
-    }
+    execArgs(parsed);
 }
   
-// Function where the piped system commands is executed
 void error(char** parsed, char** parsedpipe){
     execArgsPiped(parsed, parsedpipe);
 }
-  
-// Help command builtin
+
 void help(){
     openHelp();
 }
-  
-// Function to execute builtin commands
+
 int commands(char** parsed)
 {
     ownCmdHandler(parsed);
 }
   
-// function for finding pipe
 int parsePipe(char* str, char** strpiped)
 {
     int i;
@@ -109,13 +83,12 @@ int parsePipe(char* str, char** strpiped)
     }
   
     if (strpiped[1] == NULL)
-        return 0; // returns zero if no pipe is found.
+        return 0;
     else {
         return 1;
     }
 }
   
-// function for parsing command words
 void parseSpace(char* str, char** parsed)
 {
     int i;
