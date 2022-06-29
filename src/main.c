@@ -8,8 +8,6 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-// Includes
-
 #include "include/help.h"
 #include "include/commands.h"
 #include "include/error.h"
