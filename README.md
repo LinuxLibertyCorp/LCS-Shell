@@ -28,7 +28,7 @@
   <a href="#license">License</a>
 </p>
 <p align=center>
- <img src="https://i.imgur.com/pznBkme.png">
+ <img src="https://i.imgur.com/Y1hho55.png">
 </p>
 
 ## Download
