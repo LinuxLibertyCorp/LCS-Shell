@@ -12,10 +12,15 @@
 void openHelp()
 {
     puts("\n***WELCOME TO LCS HELP***"
+        "\nHello! This is LCS Shell! "
+        "Check our updates here: https://github.com/naddurkostia/LCS-LinuxShell"
+        "\n\n"
+        "\n\n***COMMANDS***"
         "\nList of Commands supported:"
         "\n>cd"
         "\n>ls"
-        "\n>exit");
-  
+        "\n>exit"
+        "\n>help");
+
     return;
 }

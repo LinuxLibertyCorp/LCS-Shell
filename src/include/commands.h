@@ -16,19 +16,20 @@ int ownCmdHandler(char** parsed)
     int NoOfOwnCmds = 4, i, switchOwnArg = 0;
     char* ListOfOwnCmds[NoOfOwnCmds];
     char* username;
-  
+
     ListOfOwnCmds[0] = "exit";
     ListOfOwnCmds[1] = "cd";
     ListOfOwnCmds[2] = "help";
     ListOfOwnCmds[3] = "hello";
-  
+    ListOfOwnCmds[4] = "wit";
+
     for (i = 0; i < NoOfOwnCmds; i++) {
         if (strcmp(parsed[0], ListOfOwnCmds[i]) == 0) {
             switchOwnArg = i + 1;
             break;
         }
     }
-  
+
     switch (switchOwnArg) {
     case 1:
         printf("\nGoodbye\n");
@@ -49,6 +50,6 @@ int ownCmdHandler(char** parsed)
     default:
         break;
     }
-  
+
     return 0;
 }
