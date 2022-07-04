@@ -7,7 +7,11 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
+<<<<<<< HEAD:main.c
 // Includes
+=======
+// include .h
+>>>>>>> main:src/main.c
 
 #include "include/help.h"
 #include "include/commands.h"
@@ -15,7 +19,10 @@
 #include "include/dir.h"
 #include "include/execargs.h"
 
+<<<<<<< HEAD:main.c
 
+=======
+>>>>>>> main:src/main.c
 #define MAXCOM 1000
 #define MAXLIST 100
 

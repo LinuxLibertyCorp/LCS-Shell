@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">A custom Shell for <a href="https://github.com/torvalds/linux" target="_blank">Lunux</a>.</h4>
+<h4 align="center">A custom Shell for the <a href="https://github.com/torvalds/linux" target="_blank">Linux</a> Terminal.</h4>
 
 <p align="center">
   <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">
@@ -28,7 +28,7 @@
   <a href="#license">License</a>
 </p>
 <p align=center>
- <img src="https://i.imgur.com/pznBkme.png">
+ <img src="https://i.imgur.com/Y1hho55.png">
 </p>
 
 ## Download
