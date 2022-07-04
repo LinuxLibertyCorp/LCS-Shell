@@ -1,3 +1,8 @@
+#ifndef COMMANDS_H_INCLUDED
+#define COMMANDS_H_INCLUDED
+
+#pragma once
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -53,3 +58,5 @@ int ownCmdHandler(char** parsed)
 
     return 0;
 }
+
+#endif // COMMANDS_H_INCLUDED
