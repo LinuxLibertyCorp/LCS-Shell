@@ -1,4 +1,9 @@
 // C Program to design a shell in Linux
+#ifndef DIR_H_INCLUDED
+#define DIR_H_INCLUDED
+
+#pragma once
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -14,3 +19,5 @@ void printDir()
     getcwd(cwd, sizeof(cwd));
     printf("\nDir: %s", cwd);
 }
+
+#endif // DIR_H_INCLUDED
