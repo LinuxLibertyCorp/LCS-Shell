@@ -1,4 +1,3 @@
-// C Program to design a shell in Linux
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -8,7 +7,7 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-# include .h
+// include .h
 
 #include "include/help.h"
 #include "include/commands.h"
