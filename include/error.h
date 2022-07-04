@@ -1,3 +1,8 @@
+#ifndef ERROR_H_INCLUDED
+#define ERROR_H_INCLUDED
+
+#pragma once
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -53,3 +58,4 @@ void execArgsPiped(char** parsed, char** parsedpipe)
         }
     }
 }
+#endif // ERROR_H_INCLUDED
