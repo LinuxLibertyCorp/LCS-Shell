@@ -7,14 +7,11 @@
 #include<readline/readline.h>
 #include<readline/history.h>
 
-// Includes
-
 #include "include/help.h"
 #include "include/commands.h"
 #include "include/error.h"
 #include "include/dir.h"
 #include "include/execargs.h"
-
 
 #define MAXCOM 1000
 #define MAXLIST 100
@@ -24,7 +21,7 @@
 void init_shell()
 {
     clear();
-    printf("\nLCS SHELL");
+    printf("\nLCS Shell");
     char* username = getenv("USER");
     printf("\n\n\nUSER: @%s", username);
     printf("\n");
