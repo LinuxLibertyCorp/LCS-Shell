@@ -44,13 +44,34 @@ case $CHOICE in
         echo ""
         echo -e "${ORANGE}Wait...${NC}"
         echo ""
-        {
-            for ((i = 0 ; i <= 100 ; i+=20)); do
-                sleep 1
-                echo $i
-                gcc main.c -lreadline
-            done
-        } | whiptail --gauge "Please wait while installing" 6 60 0
+        sleep 2
+
+        read -p "Enter cloned folder direction ( Example: /home/YOURUSERNAME/LCS-LinuxShell/ ) : " dir
+
+        read -p "Enter your username : " username
+
+        read -p "What shell for the terminal do you use? ( zsh, bash, etc ) : " shell
+
+        # If user use zsh shell then we need to change the shell to zsh
+        if [ $shell == "zsh" ]; 
+        then
+            echo "function shellLCS(){" >> /home/naddur/.zshrc
+            echo " cd /home/$username/Projects/shell-kernel/" >> /home/$username/.zshrc
+            echo " ./a.out" >> /home/$username/.zshrc
+            echo "}" >> /home/$username/.zshrc
+            echo "shellLCS" >> /home/$username/.zshrc
+        fi
+
+        # If user use Bash shell then we need to change the shell to bash
+        if [ $shell == "bash" ]; 
+        then
+            echo "function shellLCS(){" >> /home/naddur/.bashrc
+            echo " cd /home/naddur/Projects/shell-kernel/" >> /home/naddur/.bashrc
+            echo " ./a.out" >> /home/naddur/.bashrc
+            echo "}" >> /home/naddur/.bashrc
+            echo "shellLCS" >> /home/naddur/.bashrc
+        fi
+
 
         echo ""
         echo -e "${ORANGE}${bold}Done! Now write ./a.out into your terminal!${normal}${NC}"
