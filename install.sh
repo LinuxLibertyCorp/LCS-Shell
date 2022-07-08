@@ -46,30 +46,32 @@ case $CHOICE in
         echo ""
         sleep 2
 
-        read -p "Enter cloned folder direction ( Example: /home/YOURUSERNAME/LCS-LinuxShell/ ) : " dir
+        user=$(whoami)
 
-        read -p "Enter your username : " username
+        dir=$(pwd)
 
-        read -p "What shell for the terminal do you use? ( zsh, bash, etc ) : " shell
+        # read -p "What shell for the terminal do you use? ( zsh, bash, etc ) : " shell
+        echo "Fish Shell coming soon..."
+        echo ""
+        echo "Your shell : $SHELL"
 
-        # If user use zsh shell then we need to change the shell to zsh
-        if [ $shell == "zsh" ]; 
+        if [ $SHELL == "/usr/bin/zsh" ]; 
         then
-            echo "function shellLCS(){" >> /home/naddur/.zshrc
-            echo " cd /home/$username/Projects/shell-kernel/" >> /home/$username/.zshrc
-            echo " ./a.out" >> /home/$username/.zshrc
-            echo "}" >> /home/$username/.zshrc
-            echo "shellLCS" >> /home/$username/.zshrc
+            echo "function shellLCS(){" >> /home/$user/.zshrc
+            echo " cd $dir" >> /home/$user/.zshrc
+            echo " ./a.out" >> /home/$user/.zshrc
+            echo "}" >> /home/$user/.zshrc
+            echo "shellLCS" >> /home/$user/.zshrc
         fi
 
         # If user use Bash shell then we need to change the shell to bash
-        if [ $shell == "bash" ]; 
+        if [ $SHELL == "/bin/bash" ]; 
         then
-            echo "function shellLCS(){" >> /home/naddur/.bashrc
-            echo " cd /home/naddur/Projects/shell-kernel/" >> /home/naddur/.bashrc
-            echo " ./a.out" >> /home/naddur/.bashrc
-            echo "}" >> /home/naddur/.bashrc
-            echo "shellLCS" >> /home/naddur/.bashrc
+            echo "function shellLCS(){" >> /home/$user/.bashrc
+            echo " cd $dir" >> /home/$user/.bashrc
+            echo " ./a.out" >> /home/$user/.bashrc
+            echo "}" >> /home/$user/.bashrc
+            echo "shellLCS" >> /home/$user/.bashrc
         fi
 
 
