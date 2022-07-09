@@ -40,8 +40,15 @@ $ https://github.com/naddurkostia/LCS-LinuxShell.git
 # Go into the repository
 $ cd LCS-LinuxShell
 
-# Run the app
-$ ./a.out
+# Install Shell
+$ sh install.sh
+```
+```bash
+# If installation fails, please download dialog package.
+echo "Arch: sudo pacman -S dialog"
+echo "Debian: sudo apt-get install dialog"
+echo "Ubuntu: sudo apt-get install dialog"
+echo "Fedora: sudo dnf install dialog"
 ```
 
 > **Note**
