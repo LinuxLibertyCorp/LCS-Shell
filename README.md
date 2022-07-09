@@ -35,7 +35,7 @@
 
 ```bash
 # Clone this repository
-$ https://github.com/naddurkostia/LCS-LinuxShell.git
+$ git clone https://github.com/naddurkostia/LCS-LinuxShell.git
 
 # Go into the repository
 $ cd LCS-LinuxShell
@@ -68,7 +68,7 @@ This software uses the following open source packages:
 
 ## License
 
-GNU GPL v2
+MIT
 
 ---
 
