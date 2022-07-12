@@ -21,11 +21,11 @@
 void init_shell()
 {
     clear();
-    printf("\nLCS Shell");
+    printf("\nLCS Shell v0.4\n");
     char* username = getenv("USER");
     printf("\n\n\nUSER: @%s", username);
     printf("\n");
-    sleep(2);
+    sleep(1);
     clear();
 }
 
