@@ -16,10 +16,11 @@
 
 void openHelp()
 {
-    puts("\n***WELCOME TO LCS HELP***"
-        "\nHello! This is LCS Shell! "
-        "Check our updates here: https://github.com/naddurkostia/LCS-LinuxShell"
-        "\n\n"
+    char* username = getenv("USER");
+    printf("\nHello %s. Welcome to the help section of the LCS shell.\n",
+        username);
+    puts("Check our updates here: https://github.com/naddurkostia/LCS-LinuxShell"
+        "\n"
         "\n\n***COMMANDS***"
         "\nList of Commands supported:"
         "\n>cd"
